@@ -151,9 +151,25 @@ constructor(props)
         name : 'acorn squash',
         },
 
-      ]
+      ],
+      dataSource:0,
       
     }
+  }
+
+    componentDidMount() {
+    return fetch('http://smartbin.devfunction.com/api/?team_id=11&secret=Wc49Am')
+      .then((response) => response.json())
+      .then((responseJson) => {
+        this.setState({
+          dataSource: responseJson.data.bin_statistics,
+        }, function() {
+          // do something with new state
+        });
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   }
 
     render() {
@@ -166,19 +182,19 @@ constructor(props)
               </View>
               <View style = {styles.GeneralBinBox}>
                 <Text>General</Text>
-                <Text>0</Text>
+                <Text>{this.state.dataSource.general}</Text>
               </View>
               <View style = {styles.RecycleBinBox}>
                 <Text>Recycle</Text>
-                <Text>0</Text>
+                <Text>{this.state.dataSource.recycle}</Text>
               </View>
               <View style = {styles.ComposeBinBox}>
                 <Text  style={styles.textBinCompose}>Compose</Text>
-                <Text>0</Text>
+                <Text>{this.state.dataSource.compostable}</Text>
               </View>
               <View style = {styles.HazardBinBox}>
                 <Text >Hazard</Text>
-                <Text>0</Text>
+                <Text>{this.state.dataSource.hazardous}</Text>
               </View>
                    <TouchableHighlight onPress={() => this.props.changeComponent('TwoTH') } 
         style={styles.LanguageChangeBox}><Text style={styles.textLanguageChange}>TH</Text></TouchableHighlight>
@@ -268,9 +284,26 @@ constructor(props)
         name : 'กระดิ่ง',
         },
 
-      ]
+      ],
+      
+      dataSource:0,
       
     }
+  }
+
+    componentDidMount() {
+    return fetch('http://smartbin.devfunction.com/api/?team_id=11&secret=Wc49Am')
+      .then((response) => response.json())
+      .then((responseJson) => {
+        this.setState({
+          dataSource: responseJson.data.bin_statistics,
+        }, function() {
+          // do something with new state
+        });
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   }
 
     render() {
@@ -283,19 +316,19 @@ constructor(props)
               </View>
               <View style = {styles.GeneralBinBox}>
                 <Text>ทั่วไป</Text>
-                <Text>0</Text>
+                <Text>{this.state.dataSource.general}</Text>
               </View>
               <View style = {styles.RecycleBinBox}>
                 <Text>รีไซเคิล</Text>
-                <Text>0</Text>
+                <Text>{this.state.dataSource.recycle}</Text>
               </View>
               <View style = {styles.ComposeBinBox}>
                 <Text  style={styles.textBinCompose}>ย่อยสลาย</Text>
-                <Text>0</Text>
+                <Text>{this.state.dataSource.compostable}</Text>
               </View>
               <View style = {styles.HazardBinBox}>
                 <Text >อันตราย</Text>
-                <Text>0</Text>
+                <Text>{this.state.dataSource.hazardous}</Text>
               </View>
                    <TouchableHighlight onPress={() => this.props.changeComponent('Two') } 
         style={styles.LanguageChangeBox}><Text style={styles.textLanguageChange}>EN</Text></TouchableHighlight>
@@ -342,7 +375,24 @@ class ComponentThree extends Component {
       imagebin: 'https://i.ebayimg.com/00/s/MTAyNFg2MTQ=/z/wPEAAOSw5cRZGg3M/$_86.JPG',
       StepOfDisposing : 'Step Of Disposing',
       IconRubbish: 'https://png.icons8.com/apple/color/24',
+      dataSource:0,
+      
     }
+  }
+
+    componentDidMount() {
+    return fetch('http://smartbin.devfunction.com/api/?team_id=11&secret=Wc49Am')
+      .then((response) => response.json())
+      .then((responseJson) => {
+        this.setState({
+          dataSource: responseJson.data.bin_statistics,
+        }, function() {
+          // do something with new state
+        });
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   }
     
     render() {
@@ -354,19 +404,19 @@ class ComponentThree extends Component {
               </View>
               <View style = {styles.GeneralBinBox}>
                 <Text>General</Text>
-                <Text>0</Text>
+                <Text>{this.state.dataSource.general}</Text>
               </View>
               <View style = {styles.RecycleBinBox}>
                 <Text>Recycle</Text>
-                <Text>0</Text>
+                <Text>{this.state.dataSource.recycle}</Text>
               </View>
               <View style = {styles.ComposeBinBox}>
                 <Text  style={styles.textBinCompose}>Compose</Text>
-                <Text>0</Text>
+                <Text>{this.state.dataSource.compostable}</Text>
               </View>
               <View style = {styles.HazardBinBox}>
                 <Text >Hazard</Text>
-                <Text>0</Text>
+                <Text>{this.state.dataSource.hazardous}</Text>
               </View>
                    <TouchableHighlight onPress={() => this.props.changeComponent('ThreeTH') } 
             style={styles.LanguageChangeBox}><Text style={styles.textLanguageChange}>TH</Text></TouchableHighlight>
@@ -407,8 +457,25 @@ class ComponentThreeTH extends Component {
       imagebin: 'https://i.ebayimg.com/00/s/MTAyNFg2MTQ=/z/wPEAAOSw5cRZGg3M/$_86.JPG',
       StepOfDisposing : 'ขั้นตอน',
       IconRubbish: 'https://png.icons8.com/apple/color/24',
+      dataSource:0,
+      
     }
   }
+
+    componentDidMount() {
+    return fetch('http://smartbin.devfunction.com/api/?team_id=11&secret=Wc49Am')
+      .then((response) => response.json())
+      .then((responseJson) => {
+        this.setState({
+          dataSource: responseJson.data.bin_statistics,
+        }, function() {
+          // do something with new state
+        });
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+    }
     
     render() {
     return (
@@ -419,19 +486,19 @@ class ComponentThreeTH extends Component {
               </View>
               <View style = {styles.GeneralBinBox}>
                 <Text>ทั่วไป</Text>
-                <Text>0</Text>
+                <Text>{this.state.dataSource.general}</Text>
               </View>
               <View style = {styles.RecycleBinBox}>
                 <Text>รีไซเคิล</Text>
-                <Text>0</Text>
+                <Text>{this.state.dataSource.recycle}</Text>
               </View>
               <View style = {styles.ComposeBinBox}>
                 <Text  style={styles.textBinCompose}>ย่อยสลาย</Text>
-                <Text>0</Text>
+                <Text>{this.state.dataSource.compostable}</Text>
               </View>
               <View style = {styles.HazardBinBox}>
                 <Text >อันตราย</Text>
-                <Text>0</Text>
+                <Text>{this.state.dataSource.hazardous}</Text>
               </View>
                    <TouchableHighlight onPress={() => this.props.changeComponent('Three') } 
             style={styles.LanguageChangeBox}><Text style={styles.textLanguageChange}>EN</Text></TouchableHighlight>
