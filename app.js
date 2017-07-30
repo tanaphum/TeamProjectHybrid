@@ -6,7 +6,8 @@ import {
   View,
   TouchableHighlight,
   Button,
-  Image
+  Image,
+  ScrollView
 } from 'react-native';
 import { Select, Option } from 'react-native-select-list';
 
@@ -134,7 +135,22 @@ constructor(props)
         
         name : 'acorn squash',
         },
-    
+        , 
+        {
+        
+        name : 'acorn squash',
+        },
+        , 
+        {
+        
+        name : 'acorn squash',
+        },
+        , 
+        {
+        
+        name : 'acorn squash',
+        },
+
       ]
       
     }
@@ -143,6 +159,7 @@ constructor(props)
     render() {
     return (
         <View style={{backgroundColor: '#ccc', flex:1}}>
+        <ScrollView>
            <View style = {styles.ViewRow}>
               <View style = {styles.BackBox} >
                 <Text style={{fontSize : 30}} onPress={() => this.props.changeComponent('One') }>🔙</Text>
@@ -168,12 +185,16 @@ constructor(props)
                
                 
               
-           </View>
+          
+          
+          </View>
           <TouchableHighlight style={styles.button}><Text>A</Text></TouchableHighlight>
           
    
            {this.lapsList(this.state.array)}
           {this.lapsList(this.state.Asection)}
+
+          </ScrollView>
       </View>
     )
   }
