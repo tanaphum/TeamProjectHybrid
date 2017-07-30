@@ -181,10 +181,25 @@ constructor(props)
                 />
           </View>
           </TouchableHighlight>
-
+   
+          {this.lapsList()}
       </View>
     )
   }
+
+  lapsList() {
+
+    return this.state.array.map((data) => {
+      return (
+        <View><Text>{data.id}</Text>
+
+          <TouchableHighlight onPress={() => this.props.changeComponent('ThreeTH') } 
+        style={styles.button}><Text>{data.name}</Text></TouchableHighlight>
+          </View>
+      )
+    })
+
+}
 }
 
 
@@ -238,7 +253,7 @@ constructor(props)
                 <Text >อันตราย</Text>
                 <Text>0</Text>
               </View>
-                   <TouchableHighlight onPress={() => this.props.changeComponent('OneTH') } 
+                   <TouchableHighlight onPress={() => this.props.changeComponent('One') } 
         style={styles.button}><Text>EN</Text></TouchableHighlight>
                
                 
