@@ -159,7 +159,7 @@ constructor(props)
     render() {
     return (
         <View style={{backgroundColor: '#ccc', flex:1}}>
-        <ScrollView>
+        
            <View style = {styles.ViewRow}>
               <View style = {styles.BackBox} >
                 <Text style={{fontSize : 30}} onPress={() => this.props.changeComponent('One') }>🔙</Text>
@@ -182,12 +182,9 @@ constructor(props)
               </View>
                    <TouchableHighlight onPress={() => this.props.changeComponent('OneTH') } 
         style={styles.button}><Text>TH</Text></TouchableHighlight>
-               
-                
-              
-          
-          
+
           </View>
+          <ScrollView>
           <TouchableHighlight style={styles.button}><Text>A</Text></TouchableHighlight>
           
    
