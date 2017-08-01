@@ -25,7 +25,13 @@ export default class Teamproject extends Component {
     {
       componentSelected: 'One',
       nameapp: 'Check Rubbish',
-      currentObj: '',
+      currentObj: {
+          name : 'null',
+          category: 'compost',
+          Obj_icon: 'https://png.icons8.com/bread/office/16',
+          img_bin: 'https://s3-ap-southeast-2.amazonaws.com/wc-prod-pim/JPEG_1000x1000/JBRMSH18LB_j_burrows_18l_mesh_bin_black.jpg',
+          StepOfDisposing : 'null'
+    	},
     }
   }
    //change Page function
@@ -47,11 +53,11 @@ export default class Teamproject extends Component {
       } 
         //English list page
         else if(component == 'Two') {
-        return <ListPage nameapp={this.state.nameapp} changeComponent={this.changeComponent} />
+        return <ListPage changeComponent={this.changeComponent} goToDescription={this.goToDescription}/>
       } 
         //English description page
         else if(component == 'Three') {
-        return <DescriptionPage changeComponent={this.changeComponent} />
+        return <DescriptionPage changeComponent={this.changeComponent} currentObj={this.state.currentObj}/>
       } 
 
         //Thai start page
@@ -60,11 +66,11 @@ export default class Teamproject extends Component {
       }
         //Thai list page
         else if(component == 'TwoTH'){
-        return <ListPageTH nameapp={this.state.nameapp} changeComponent={this.changeComponent} />
+        return <ListPageTH changeComponent={this.changeComponent} goToDescription={this.goToDescription}/>
       }
         //Thai description page
         else if(component == 'ThreeTH'){
-        return <DescriptionPageTH nameapp={this.state.nameapp} changeComponent={this.changeComponent} />
+        return <DescriptionPageTH changeComponent={this.changeComponent} currentObj={this.state.currentObj}/>
       }
   }
 
