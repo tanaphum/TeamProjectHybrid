@@ -25,8 +25,8 @@ constructor(props)
       IconRubbish: 'https://png.icons8.com/apple/color/24',
       StepOfDisposing : 'Step Of Disposing',
       array:[
-            	{
-   	 
+              {
+     
                     name : 'ไก่' ,
                 category: 'hazard',
                 Obj_icon: 'https://png.icons8.com/chicken/office/16',
@@ -51,32 +51,6 @@ constructor(props)
                     },
 
       ],
-      Bthsection:[
-      {
-     
-      name : 'ไข่' ,
-  category: 'compostable',
-  Obj_icon: 'https://png.icons8.com/easter-egg/android/24',
-  img_bin: 'https://s3-ap-southeast-2.amazonaws.com/wc-prod-pim/JPEG_1000x1000/JBRMSH18LB_j_burrows_18l_mesh_bin_black.jpg',
-  StepOfDisposing : 'ควรรีดน้ำออกให้หมดก่อนทิ้ง.'
-      },
-       {
-     
-      name : 'ขนัมปัง',
-  category: 'compostable',
-  Obj_icon: 'https://png.icons8.com/bread/office/16',
-  img_bin: 'http://www.aacounty.org/sebin/j/x/bins.jpeg',
-  StepOfDisposing : 'ควรรีดน้ำออกให้หมดก่อนทิ้ง'
-      },
-      {
-     
-      name : 'ขวด',
-  category: 'recycle',
-  Obj_icon: 'https://png.icons8.com/wine-bottle/dusk/64',
-  img_bin: 'http://www.aacounty.org/sebin/j/x/bins.jpeg',
-  StepOfDisposing : 'ขวดควรแยกเป็นขวดใส ขวดสีชา และขวดสีอื่นๆ และควรล้างทำความสะอาดก่อนนำมาส่งควรแยกฝาที่เป็นโลหะทิ้งไปกับขยะที่ไม่สามารถเผาได้ ฝาพลาสติกทิ้งไปกับขวดพลาสติก ส่วนขวดที่แตกแล้วทิ้งไปกับขยะที่ไม่สามารถเผาได้'
-      },
-  ],
       
       dataSource:0,
       
@@ -101,10 +75,12 @@ constructor(props)
     render() {
     return (
         <View style={{backgroundColor: '#ccc', flex:1}}>
-        
+        <View style={{alignItems: 'center', backgroundColor: '#ffccee'}}>
+          <Text style={{fontSize: 30}}>Check Rubbish</Text>
+          </View>
            <View style = {styles.ViewRow}>
               <View style = {styles.BackBox} >
-                <Text style={{fontSize : 30}} onPress={() => this.props.changeComponent('OneTH') }>🔙</Text>
+                
               </View>
               <View style = {styles.GeneralBinBox}>
                 <Text>ทั่วไป</Text>
@@ -127,21 +103,11 @@ constructor(props)
 
           </View>
           <ScrollView>
-<<<<<<< HEAD
-          <TouchableHighlight style={styles.button} ><Text>ก</Text></TouchableHighlight>
-=======
-          <TouchableHighlight style={styles.button}><Text>ก</Text></TouchableHighlight>
->>>>>>> 6733b7b65c3d1d1a5bb69f71a9b38348a85e7d20
+          <TouchableHighlight style={styles.SectionItem}><Text style={{fontSize:25 ,color:'#99ffff'}}>ก</Text></TouchableHighlight>
           
           
            {this.lapsList(this.state.array)}
 
-
-
-             <TouchableHighlight style={styles.button} ><Text>ข</Text></TouchableHighlight>
-          
-          
-           {this.lapsList(this.state.Bthsection)}
           </ScrollView>
       </View>
     )

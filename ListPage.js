@@ -24,20 +24,6 @@ constructor(props)
       NameRubbish : 'apple' ,
       IconRubbish: 'https://png.icons8.com/apple/color/24',
       StepOfDisposing : 'Step Of Disposing',
-<<<<<<< HEAD
-      array:[
-        {
-        id : 1,
-        name : 'test1',
-        },
-        {
-        id : 2,
-        name : 'testw',
-        },
-      ],
-
-=======
->>>>>>> 6733b7b65c3d1d1a5bb69f71a9b38348a85e7d20
       dataSource:0,
       
               Bsection:[
@@ -74,33 +60,6 @@ constructor(props)
   StepOfDisposing : 'Should dehydate the gabage or remove water in gabage  before trash.'
     	},
 	],
-	Csection:[
-    	{
-   	 
-    	name : 'chicken' ,
-	category: 'compostable',
-  Obj_icon: 'https://png.icons8.com/chicken/office/16',
-  img_bin: 'https://s3-ap-southeast-2.amazonaws.com/wc-prod-pim/JPEG_1000x1000/JBRMSH18LB_j_burrows_18l_mesh_bin_black.jpg',
-  StepOfDisposing : 'Should wrapping the hazard garbage with the bag.'
-    	},
-    	 {
-   	 
-    	name : 'can',
-	category: 'recycle',
-  Obj_icon: 'https://png.icons8.com/beer-can/office/16',
-  img_bin: 'http://www.aacounty.org/sebin/j/x/bins.jpeg',
-  StepOfDisposing : 'Should pull off the metal the garbage before trash.'
-      },
-      {
-   	 
-    	name : 'corn',
-	category: 'compostable',
-  Obj_icon: 'https://png.icons8.com/corn/office/16" title="Corn',
-  img_bin: 'https://s3-ap-southeast-2.amazonaws.com/wc-prod-pim/JPEG_1000x1000/JBRMSH18LB_j_burrows_18l_mesh_bin_black.jpg',
-  StepOfDisposing : 'Should dehydate the gabage or returnmove water in gabage  before trash.'
-    	},
-	],
-
 
       currentObj : 0,
     }
@@ -124,10 +83,12 @@ constructor(props)
     render() {
     return (
         <View style={{backgroundColor: '#ccc', flex:1}}>
-        
+          <View style={{alignItems: 'center', backgroundColor: '#ffccee'}}>
+          <Text style={{fontSize: 30}}>Check Rubbish</Text>
+          </View>
            <View style = {styles.ViewRow}>
               <View style = {styles.BackBox} >
-                <Text style={{fontSize : 30}} onPress={() => this.props.changeComponent('One') }>🔙</Text>
+                
               </View>
               <View style = {styles.GeneralBinBox}>
                 <Text>General</Text>
@@ -150,12 +111,10 @@ constructor(props)
 
           </View>
           <ScrollView>
-          <TouchableHighlight style={styles.button}><Text>B</Text></TouchableHighlight>
+          <TouchableHighlight style={styles.SectionItem}><Text style={{fontSize:25 ,color:'#99ffff'}}>B</Text></TouchableHighlight>
           
    
           {this.lapsList(this.state.Bsection)}
-          <TouchableHighlight  style={styles.button}><Text>C</Text></TouchableHighlight>
-          {this.lapsList(this.state.Csection)}
 
           </ScrollView>
       </View>

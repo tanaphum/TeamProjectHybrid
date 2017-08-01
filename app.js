@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 import { Select, Option } from 'react-native-select-list';
 import StartPage from './StartPage.js';//import English start page
-import StartPageTH from './StartPageTH.js';//import Thai start page
+
 import ListPage from './ListPage.js';//import English list page
 import ListPageTH from './ListPageTH.js';//import Thai list page
 import DescriptionPage from './DescriptionPage.js' ;//import English description page
@@ -115,10 +115,7 @@ updateStat = (category) => {
         return <DescriptionPage changeComponent={this.changeComponent} currentObj={this.state.currentObj}/>
       } 
 
-        //Thai start page
-        else if(component == 'OneTH'){
-        return <StartPageTH nameapp={this.state.nameapp} changeComponent={this.changeComponent} />
-      }
+       
         //Thai list page
         else if(component == 'TwoTH'){
         return <ListPageTH changeComponent={this.changeComponent} goToDescription={this.goToDescription}/>

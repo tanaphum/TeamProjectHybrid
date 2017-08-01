@@ -47,6 +47,9 @@ export default class DescriptionPageTH extends Component {
     render() {
     return (
         <View style={{backgroundColor: '#ccc', flex:1}}>
+        <View style={{alignItems: 'center', backgroundColor: '#ffccee'}}>
+          <Text style={{fontSize: 30}}>Check Rubbish</Text>
+          </View>
            <View style = {styles.ViewRow}>
               <View style = {styles.BackBox} >
                 <Text style={{fontSize : 30}} onPress={() => this.props.changeComponent('TwoTH') }>🔙</Text>
