@@ -57,6 +57,15 @@ module.exports =StyleSheet.create({
   },
   ViewRow :{
     flexDirection: 'row'
+  },
+  SectionItem :{
+    backgroundColor: '#ccc',
+    flexDirection: 'row',
+  },
+  BinItembox :{
+    backgroundColor: '#ededed',
+    padding: 10
   }
+
 
 });

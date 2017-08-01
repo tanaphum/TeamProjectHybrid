@@ -11,11 +11,25 @@ import {
 } from 'react-native';
 import { Select, Option } from 'react-native-select-list';
 import StartPage from './StartPage.js';//import English start page
-import StartPageTH from './StartPageTH.js';//import Thai start page
+
 import ListPage from './ListPage.js';//import English list page
 import ListPageTH from './ListPageTH.js';//import Thai list page
+
 import DescriptionPage from './DescriptionPage.js' ;//import English description page
 import DescriptionPageTH from './DescriptionPageTH.js'; //import Thai description page
+
+import GeneralBinComponent from './GeneralBinComponent.js';//import General bin description page
+import GeneralBinComponentTH from './GeneralBinComponentTH.js';//import General bin description page
+
+import CompostableComponent from './CompostableComponent.js';
+import CompostableComponentTH from './CompostableComponentTH.js';
+
+import HazardComponent from './HazardComponent.js';
+import HazardComponentTH from './HazardComponentTH.js';
+
+import RecycleComponent from './RecycleComponent.js';
+import RecycleComponentTH from './RecycleComponentTH.js';
+
 
 export default class Teamproject extends Component {
  constructor(props)
@@ -115,10 +129,7 @@ updateStat = (category) => {
         return <DescriptionPage changeComponent={this.changeComponent} currentObj={this.state.currentObj}/>
       } 
 
-        //Thai start page
-        else if(component == 'OneTH'){
-        return <StartPageTH nameapp={this.state.nameapp} changeComponent={this.changeComponent} />
-      }
+
         //Thai list page
         else if(component == 'TwoTH'){
         return <ListPageTH changeComponent={this.changeComponent} goToDescription={this.goToDescription}/>
@@ -127,6 +138,42 @@ updateStat = (category) => {
         else if(component == 'ThreeTH'){
         return <DescriptionPageTH changeComponent={this.changeComponent} currentObj={this.state.currentObj}/>
       }
+
+      //General bin description page
+        else if(component == 'GeneralComponent'){
+        return <GeneralBinComponent changeComponent={this.changeComponent} />
+      }
+      //General bin description page
+        else if(component == 'GeneralComponentTH'){
+        return <GeneralBinComponentTH changeComponent={this.changeComponent}/>
+      }
+       //Compostable bin description page
+        else if(component == 'CompostableComponent'){
+        return <CompostableComponent changeComponent={this.changeComponent} />
+      }
+      //Compostable bin description page
+        else if(component == 'CompostableComponentTH'){
+        return <CompostableComponentTH changeComponent={this.changeComponent}/>
+      }
+       //Recycle bin description page
+        else if(component == 'RecycleComponent'){
+        return <RecycleComponent changeComponent={this.changeComponent} />
+      }
+      //Recycle bin description page
+        else if(component == 'RecycleComponentTH'){
+        return <RecycleComponentTH changeComponent={this.changeComponent}/>
+      }
+      //hazard bin description page
+        else if(component == 'HazardComponent'){
+        return <HazardComponent changeComponent={this.changeComponent} />
+      }
+      //hazard bin description page
+        else if(component == 'HazardComponentTH'){
+        return <HazardComponentTH changeComponent={this.changeComponent}/>
+      }
+
+
+
   }
 
   render() {

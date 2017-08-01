@@ -25,8 +25,8 @@ constructor(props)
       IconRubbish: 'https://png.icons8.com/apple/color/24',
       StepOfDisposing : 'Step Of Disposing',
       array:[
-            	{
-   	 
+              {
+     
                     name : 'ไก่' ,
                 category: 'hazard',
                 Obj_icon: 'https://png.icons8.com/chicken/office/16',
@@ -75,35 +75,48 @@ constructor(props)
     render() {
     return (
         <View style={{backgroundColor: '#ccc', flex:1}}>
-        
+        <View style={{alignItems: 'center', backgroundColor: '#ffccee'}}>
+          <Text style={{fontSize: 30}}>Check Rubbish</Text>
+          </View>
            <View style = {styles.ViewRow}>
               <View style = {styles.BackBox} >
-                <Text style={{fontSize : 30}} onPress={() => this.props.changeComponent('OneTH') }>🔙</Text>
+                
               </View>
+              
+
               <View style = {styles.GeneralBinBox}>
-                <Text>ทั่วไป</Text>
-                <Text>{this.state.dataSource.general}</Text>
+                <TouchableHighlight  onPress={() => this.props.changeComponent('GeneralComponentTH')}>
+                <View><Text>ทั่วไป</Text><Text>{this.state.dataSource.general}</Text></View></TouchableHighlight>
+                
               </View>
+
               <View style = {styles.RecycleBinBox}>
-                <Text>รีไซเคิล</Text>
-                <Text>{this.state.dataSource.recycle}</Text>
+                <TouchableHighlight  onPress={() => this.props.changeComponent('RecycleComponentTH')}>
+                <View><Text>รีไซเคิล</Text><Text>{this.state.dataSource.recycle}</Text></View></TouchableHighlight>
+                
               </View>
+
               <View style = {styles.ComposeBinBox}>
-                <Text  style={styles.textBinCompose}>ย่อยสลาย</Text>
-                <Text>{this.state.dataSource.compostable}</Text>
+                <TouchableHighlight  onPress={() => this.props.changeComponent('CompostableComponentTH')}>
+                <View><Text style={{fontSize : 12}}>ย่อยสลาย</Text><Text>{this.state.dataSource.compostable}</Text></View></TouchableHighlight>
               </View>
+
               <View style = {styles.HazardBinBox}>
-                <Text >อันตราย</Text>
-                <Text>{this.state.dataSource.hazardous}</Text>
+                <TouchableHighlight  onPress={() => this.props.changeComponent('HazardComponentTH')}>
+                <View><Text>อันตราย</Text><Text>{this.state.dataSource.hazardous}</Text></View></TouchableHighlight>
               </View>
+
+
+
                    <TouchableHighlight onPress={() => this.props.changeComponent('Two') } 
         style={styles.LanguageChangeBox}><Text style={styles.textLanguageChange}>EN</Text></TouchableHighlight>
 
           </View>
           <ScrollView>
-          <TouchableHighlight style={styles.button}><Text>ก</Text></TouchableHighlight>
+          <TouchableHighlight style={styles.SectionItem}><Text style={{fontSize:25 ,color:'#99ffff'}}>ก</Text></TouchableHighlight>
           
           
+
            {this.lapsList(this.state.array)}
 
           </ScrollView>
@@ -117,8 +130,11 @@ constructor(props)
       return (
         <View>
 
-          <TouchableHighlight onPress={() => this.props.goToDescription('ThreeTH',data) } 
-        style={styles.button}><Text>{data.name}</Text></TouchableHighlight>
+          <TouchableHighlight onPress={() => this.props.goToDescription('Three',data)}
+        style={styles.button}><Text>{data.name}                 <Image            
+                style={{width: 30, height: 30}}
+                source={{uri: data.Obj_icon}} 
+                /></Text></TouchableHighlight>
           </View>
       )
     })

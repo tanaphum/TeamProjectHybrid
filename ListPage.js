@@ -83,33 +83,40 @@ constructor(props)
     render() {
     return (
         <View style={{backgroundColor: '#ccc', flex:1}}>
-        
+          <View style={{alignItems: 'center', backgroundColor: '#ffccee'}}>
+          <Text style={{fontSize: 30}}>Check Rubbish</Text>
+          </View>
            <View style = {styles.ViewRow}>
               <View style = {styles.BackBox} >
-                <Text style={{fontSize : 30}} onPress={() => this.props.changeComponent('One') }>🔙</Text>
+                
               </View>
               <View style = {styles.GeneralBinBox}>
-                <Text>General</Text>
-                <Text>{this.state.dataSource.general}</Text>
+                <TouchableHighlight  onPress={() => this.props.changeComponent('GeneralComponent')}>
+                <View><Text>General</Text><Text>{this.state.dataSource.general}</Text></View></TouchableHighlight>
+                
               </View>
+
               <View style = {styles.RecycleBinBox}>
-                <Text>Recycle</Text>
-                <Text>{this.state.dataSource.recycle}</Text>
+                <TouchableHighlight  onPress={() => this.props.changeComponent('RecycleComponent')}>
+                <View><Text>Recycle</Text><Text>{this.state.dataSource.recycle}</Text></View></TouchableHighlight>
               </View>
+
               <View style = {styles.ComposeBinBox}>
-                <Text  style={styles.textBinCompose}>Compose</Text>
-                <Text>{this.state.dataSource.compostable}</Text>
+                <TouchableHighlight  onPress={() => this.props.changeComponent('CompostableComponent')}>
+                <View><Text style={{fontSize : 12}}>Compost</Text><Text>{this.state.dataSource.compostable}</Text></View></TouchableHighlight>
               </View>
+
               <View style = {styles.HazardBinBox}>
-                <Text >Hazard</Text>
-                <Text>{this.state.dataSource.hazardous}</Text>
+                <TouchableHighlight  onPress={() => this.props.changeComponent('HazardComponent')}>
+                <View><Text>Hazard</Text><Text>{this.state.dataSource.hazardous}</Text></View></TouchableHighlight>
               </View>
+
                    <TouchableHighlight onPress={() => this.props.changeComponent('TwoTH') } 
         style={styles.LanguageChangeBox}><Text style={styles.textLanguageChange}>TH</Text></TouchableHighlight>
 
           </View>
           <ScrollView>
-          <TouchableHighlight style={styles.button}><Text>B</Text></TouchableHighlight>
+          <TouchableHighlight style={styles.SectionItem}><Text style={{fontSize:25 ,color:'#99ffff'}}>B</Text></TouchableHighlight>
           
    
           {this.lapsList(this.state.Bsection)}

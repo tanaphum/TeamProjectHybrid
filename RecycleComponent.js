@@ -11,19 +11,18 @@ import {
 } from 'react-native';
 import { Select, Option } from 'react-native-select-list';
 
-export default class DescriptionPage extends Component {
+import ListPage from './ListPage.js';//import English list page
+
+
+
+export default class RecycleComponent extends Component {
 
      constructor(props)
   {
     super(props);
     this.state =
     {
-      componentSelected: 'One',
-      Language : 'En',
-      Typeofbin: 'Compose',
-      imagebin: 'https://i.ebayimg.com/00/s/MTAyNFg2MTQ=/z/wPEAAOSw5cRZGg3M/$_86.JPG',
-      StepOfDisposing : 'Step Of Disposing',
-      IconRubbish: 'https://png.icons8.com/apple/color/24',
+      
       dataSource:0,
       
     }
@@ -54,7 +53,7 @@ export default class DescriptionPage extends Component {
               <View style = {styles.BackBox} >
                 <Text style={{fontSize : 30}} onPress={() => this.props.changeComponent('Two') }>🔙</Text>
               </View>
-              
+
               <View style = {styles.GeneralBinBox}>
                 <TouchableHighlight  onPress={() => this.props.changeComponent('GeneralComponent')}>
                 <View><Text>General</Text><Text>{this.state.dataSource.general}</Text></View></TouchableHighlight>
@@ -75,30 +74,35 @@ export default class DescriptionPage extends Component {
                 <View><Text>Hazard</Text><Text>{this.state.dataSource.hazardous}</Text></View></TouchableHighlight>
               </View>
 
-                   <TouchableHighlight onPress={() => this.props.changeComponent('TwoTH') } 
+                   <TouchableHighlight onPress={() => this.props.changeComponent('RecycleComponentTH') } 
             style={styles.LanguageChangeBox}><Text style={styles.textLanguageChange}>TH</Text></TouchableHighlight>
            </View>
-        <TouchableHighlight style={styles.button}>
-            <View style={styles.ViewRow}>
-                <Text style={{marginRight : 100}}>
-                  {this.props.currentObj.name}
-                </Text>
-                <Image            
-                style={{width: 30, height: 30}}
-                source={{uri: this.props.currentObj.Obj_icon}} 
-                />
-                
-            </View>
-        </TouchableHighlight>
-        {/*Show Type of bin  image and StepOfDisposing */}
-        <View style={{backgroundColor: '#444444', flex:1,alignItems: 'center',paddingTop : 20}}>
-          <Image           
-          style={{width: 100, height: 100,marginBottom : 30}}
-          source={{uri: this.props.currentObj.img_bin}} 
-          />
-          <Text>Step Of Disposing</Text>
-          <Text>{this.props.currentObj.StepOfDisposing}</Text>
-        </View>
+      
+       
+        
+          <View>
+          <TouchableHighlight style={styles.SectionItem}><Text style={{fontSize:25 ,color:'#99ffff'}}>Recycle <Image            
+                style={{width: 40, height: 40}}
+                source={{uri: 'https://image.shutterstock.com/z/stock-vector-yellow-recycle-symbol-in-black-circle-40226371.jpg'}} 
+                /></Text></TouchableHighlight>
+          </View>
+
+          <Text style={styles.BinItembox}>- empty plastic bottle</Text>
+          <Text style={styles.BinItembox}>- plastic bag</Text>
+          <Text style={styles.BinItembox}>- empty glass</Text>
+          <Text style={styles.BinItembox}>- broken glass</Text>
+          <Text style={styles.BinItembox}>- metal</Text>
+          <Text style={styles.BinItembox}>- empty can</Text>
+          <Text style={styles.BinItembox}>- empty berverage container</Text>
+          <Text style={styles.BinItembox}>- piece of paper</Text>
+          
+          
+
+
+
+
+
+
       </View>
     )
   }

@@ -11,19 +11,18 @@ import {
 } from 'react-native';
 import { Select, Option } from 'react-native-select-list';
 
-export default class DescriptionPage extends Component {
+import ListPage from './ListPage.js';//import English list page
+
+
+
+export default class GeneralBinComponent extends Component {
 
      constructor(props)
   {
     super(props);
     this.state =
     {
-      componentSelected: 'One',
-      Language : 'En',
-      Typeofbin: 'Compose',
-      imagebin: 'https://i.ebayimg.com/00/s/MTAyNFg2MTQ=/z/wPEAAOSw5cRZGg3M/$_86.JPG',
-      StepOfDisposing : 'Step Of Disposing',
-      IconRubbish: 'https://png.icons8.com/apple/color/24',
+      
       dataSource:0,
       
     }
@@ -54,7 +53,7 @@ export default class DescriptionPage extends Component {
               <View style = {styles.BackBox} >
                 <Text style={{fontSize : 30}} onPress={() => this.props.changeComponent('Two') }>🔙</Text>
               </View>
-              
+
               <View style = {styles.GeneralBinBox}>
                 <TouchableHighlight  onPress={() => this.props.changeComponent('GeneralComponent')}>
                 <View><Text>General</Text><Text>{this.state.dataSource.general}</Text></View></TouchableHighlight>
@@ -74,31 +73,34 @@ export default class DescriptionPage extends Component {
                 <TouchableHighlight  onPress={() => this.props.changeComponent('HazardComponent')}>
                 <View><Text>Hazard</Text><Text>{this.state.dataSource.hazardous}</Text></View></TouchableHighlight>
               </View>
-
-                   <TouchableHighlight onPress={() => this.props.changeComponent('TwoTH') } 
+                   <TouchableHighlight onPress={() => this.props.changeComponent('GeneralComponentTH') } 
             style={styles.LanguageChangeBox}><Text style={styles.textLanguageChange}>TH</Text></TouchableHighlight>
            </View>
-        <TouchableHighlight style={styles.button}>
-            <View style={styles.ViewRow}>
-                <Text style={{marginRight : 100}}>
-                  {this.props.currentObj.name}
-                </Text>
-                <Image            
-                style={{width: 30, height: 30}}
-                source={{uri: this.props.currentObj.Obj_icon}} 
-                />
-                
-            </View>
-        </TouchableHighlight>
-        {/*Show Type of bin  image and StepOfDisposing */}
-        <View style={{backgroundColor: '#444444', flex:1,alignItems: 'center',paddingTop : 20}}>
-          <Image           
-          style={{width: 100, height: 100,marginBottom : 30}}
-          source={{uri: this.props.currentObj.img_bin}} 
-          />
-          <Text>Step Of Disposing</Text>
-          <Text>{this.props.currentObj.StepOfDisposing}</Text>
-        </View>
+      
+       
+        
+          <View>
+          <TouchableHighlight style={styles.SectionItem}><Text style={{fontSize:25 ,color:'#99ffff'}}>General <Image            
+                style={{width: 40, height: 40}}
+                source={{uri: 'https://thumbs.dreamstime.com/x/sign-bin-general-waste-26140645.jpg'}} 
+                /></Text></TouchableHighlight>
+          </View>
+          <Text style={styles.BinItembox}>- used plastic container</Text>
+          <Text style={styles.BinItembox}>- cloth</Text>
+          <Text style={styles.BinItembox}>- straw</Text>
+          <Text style={styles.BinItembox}>- instant noodle cup</Text>
+          <Text style={styles.BinItembox}>- candy bag </Text>
+          <Text style={styles.BinItembox}>- paper cup</Text>
+          <Text style={styles.BinItembox}>- snack bag</Text>
+          <Text style={styles.BinItembox}>- foam box</Text>
+          <Text style={styles.BinItembox}>- instant noodle bag </Text>
+          <Text style={styles.BinItembox}>- food box</Text>
+          <Text style={styles.BinItembox}>- tissue paper</Text>
+
+
+
+
+
       </View>
     )
   }
