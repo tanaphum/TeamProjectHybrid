@@ -31,7 +31,12 @@ export default class Teamproject extends Component {
           Obj_icon: 'https://png.icons8.com/bread/office/16',
           img_bin: 'https://s3-ap-southeast-2.amazonaws.com/wc-prod-pim/JPEG_1000x1000/JBRMSH18LB_j_burrows_18l_mesh_bin_black.jpg',
           StepOfDisposing : 'null'
+
     	},
+    	IncreasaeGeneral: 0,
+      	IncreasaeRecycle:0,
+      	IncreasaeCompostable:0,
+      	IncreasaeHazard:0,
     }
   }
    //change Page function
@@ -39,13 +44,63 @@ export default class Teamproject extends Component {
     this.setState({componentSelected: component});
   }
 
-  goToDescription = (component,data) =>{
+ goToDescription = (component,data) =>{
+     
+    this.updateStat(data.category),
      this.setState({
        componentSelected: component,
        currentObj: data,
       });
+     
   }
 
+
+  //POST api from smartbin
+updateStat = (category) => {
+  if(category == 'general') {
+    this.setState({
+      IncreasaeGeneral: 1,
+      IncreasaeCompostable: 0,
+      IncreasaeRecycle: 0,
+      IncreasaeHazard: 0
+    })
+  }else if(category == 'compostable') {
+     this.setState({
+      IncreasaeGeneral: 0,
+      IncreasaeCompostable: 1,
+      IncreasaeRecycle: 0,
+      IncreasaeHazard: 0
+    })
+  }else if(category == 'recycle') {
+     this.setState({
+      IncreasaeGeneral: 0,
+      IncreasaeCompostable: 0,
+      IncreasaeRecycle: 1,
+      IncreasaeHazard: 0
+    })
+  }else if(category == 'hazard') {
+     this.setState({
+      IncreasaeGeneral: 0,  
+      IncreasaeCompostable: 0,
+      IncreasaeRecycle: 0,
+      IncreasaeHazard: 1
+    })
+  }
+  fetch('http://smartbin.devfunction.com/api/', {
+  method: 'post',
+  body: JSON.stringify({
+    team_id: 11,
+    secret: 'Wc49Am',
+
+    bin_statistics: {
+      general: this.state.IncreasaeGeneral,
+      compostable: this.state.IncreasaeCompostable,
+      recycle: this.state.IncreasaeRecycle,
+      hazardous: this.state.IncreasaeHazard,
+    }
+  })
+});
+}
   renderComponent(component) {
         //English start page
         if(component == 'One') {
