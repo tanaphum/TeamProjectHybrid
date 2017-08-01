@@ -153,7 +153,7 @@ constructor(props)
 
           </View>
           <ScrollView>
-          <TouchableHighlight onPress={() => this.updateStat()} style={styles.button}><Text>B</Text></TouchableHighlight>
+          <TouchableHighlight style={styles.button}><Text>B</Text></TouchableHighlight>
           
    
           {this.lapsList(this.state.Bsection)}

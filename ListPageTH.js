@@ -101,7 +101,7 @@ constructor(props)
 
           </View>
           <ScrollView>
-          <TouchableHighlight ><Text>ก</Text></TouchableHighlight>
+          <TouchableHighlight style={styles.button}><Text>ก</Text></TouchableHighlight>
           
           
            {this.lapsList(this.state.array)}
