@@ -82,22 +82,34 @@ constructor(props)
               <View style = {styles.BackBox} >
                 
               </View>
-              <View style = {styles.GeneralBinBox}>
-                <Text>ทั่วไป</Text>
-                <Text>{this.state.dataSource.general}</Text>
+              
+
+                <View style = {styles.GeneralBinBox}>
+                <TouchableHighlight  onPress={() => this.props.changeComponent('GeneralComponent')}>
+                <Text >ทั่วไป {this.state.dataSource.general}</Text></TouchableHighlight>
+                
               </View>
+
               <View style = {styles.RecycleBinBox}>
-                <Text>รีไซเคิล</Text>
-                <Text>{this.state.dataSource.recycle}</Text>
+                <TouchableHighlight  onPress={() => this.props.changeComponent('RecycleComponent')}>
+                <Text >รีไซเคิล {this.state.dataSource.recycle}</Text></TouchableHighlight>
+                
               </View>
+
               <View style = {styles.ComposeBinBox}>
-                <Text  style={styles.textBinCompose}>ย่อยสลาย</Text>
-                <Text>{this.state.dataSource.compostable}</Text>
+                <TouchableHighlight  onPress={() => this.props.changeComponent('CompostableComponent')}>
+                <Text >ย่อยสลาย {this.state.dataSource.compostable}</Text></TouchableHighlight>
+                
               </View>
+
               <View style = {styles.HazardBinBox}>
-                <Text >อันตราย</Text>
-                <Text>{this.state.dataSource.hazardous}</Text>
+                <TouchableHighlight  onPress={() => this.props.changeComponent('HazardComponent')}>
+                <Text >อันตราย {this.state.dataSource.hazardous}</Text></TouchableHighlight>
+                
               </View>
+
+
+
                    <TouchableHighlight onPress={() => this.props.changeComponent('Two') } 
         style={styles.LanguageChangeBox}><Text style={styles.textLanguageChange}>EN</Text></TouchableHighlight>
 
@@ -106,7 +118,7 @@ constructor(props)
           <TouchableHighlight style={styles.SectionItem}><Text style={{fontSize:25 ,color:'#99ffff'}}>ก</Text></TouchableHighlight>
           
           
-          
+
            {this.lapsList(this.state.array)}
 
           </ScrollView>

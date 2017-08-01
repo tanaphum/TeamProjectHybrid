@@ -55,21 +55,29 @@ export default class DescriptionPage extends Component {
                 <Text style={{fontSize : 30}} onPress={() => this.props.changeComponent('Two') }>🔙</Text>
               </View>
               <View style = {styles.GeneralBinBox}>
-                <Text>General</Text>
-                <Text>{this.state.dataSource.general}</Text>
+                <TouchableHighlight  onPress={() => this.props.changeComponent('GeneralComponent')}>
+                <Text >General {this.state.dataSource.general}</Text></TouchableHighlight>
+                
               </View>
+
               <View style = {styles.RecycleBinBox}>
-                <Text>Recycle</Text>
-                <Text>{this.state.dataSource.recycle}</Text>
+                <TouchableHighlight  onPress={() => this.props.changeComponent('RecycleComponent')}>
+                <Text >Recycle {this.state.dataSource.recycle}</Text></TouchableHighlight>
+                
               </View>
+
               <View style = {styles.ComposeBinBox}>
-                <Text  style={styles.textBinCompose}>Compose</Text>
-                <Text>{this.state.dataSource.compostable}</Text>
+                <TouchableHighlight  onPress={() => this.props.changeComponent('CompostableComponent')}>
+                <Text >Compost {this.state.dataSource.compostable}</Text></TouchableHighlight>
+                
               </View>
+
               <View style = {styles.HazardBinBox}>
-                <Text >Hazard</Text>
-                <Text>{this.state.dataSource.hazardous}</Text>
+                <TouchableHighlight  onPress={() => this.props.changeComponent('HazardComponent')}>
+                <Text >Hazard {this.state.dataSource.hazardous}</Text></TouchableHighlight>
+                
               </View>
+
                    <TouchableHighlight onPress={() => this.props.changeComponent('TwoTH') } 
             style={styles.LanguageChangeBox}><Text style={styles.textLanguageChange}>TH</Text></TouchableHighlight>
            </View>
