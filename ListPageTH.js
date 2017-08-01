@@ -101,7 +101,7 @@ constructor(props)
 
           </View>
           <ScrollView>
-          <TouchableHighlight onPress={() => this.updateStat()} style={styles.button}><Text>ก</Text></TouchableHighlight>
+          <TouchableHighlight ><Text>ก</Text></TouchableHighlight>
           
           
            {this.lapsList(this.state.array)}
@@ -117,29 +117,12 @@ constructor(props)
       return (
         <View>
 
-          <TouchableHighlight onPress={() => this.props.goToDescription('ThreeTH',data) } 
+          <TouchableHighlight  
         style={styles.button}><Text>{data.name}</Text></TouchableHighlight>
           </View>
       )
     })
 
-}
-//POST api from smartbin
-updateStat = () => {
-  fetch('http://smartbin.devfunction.com/api/', {
-  method: 'post',
-  body: JSON.stringify({
-    team_id: 11,
-    secret: 'Wc49Am',
-
-    bin_statistics: {
-      general: 1,
-      compostable: 1,
-      recycle: 1,
-      hazardous: 1
-    }
-  })
-});
 }
 }
 

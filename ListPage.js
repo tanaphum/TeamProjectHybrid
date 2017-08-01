@@ -169,7 +169,7 @@ constructor(props)
       return (
         <View>
 
-          <TouchableHighlight onPress={() => this.props.goToDescription('Three',data) } 
+          <TouchableHighlight  
         style={styles.button}><Text>{data.name}                 <Image            
                 style={{width: 30, height: 30}}
                 source={{uri: data.Obj_icon}} 
@@ -179,23 +179,6 @@ constructor(props)
     })
 
 }
-//POST api from smartbin
-updateStat = () => {
-  fetch('http://smartbin.devfunction.com/api/', {
-  method: 'post',
-  body: JSON.stringify({
-    team_id: 11,
-    secret: 'Wc49Am',
 
-    bin_statistics: {
-      general: 1,
-      compostable: 1,
-      recycle: 1,
-      hazardous: 1
-    }
-  })
-});
 }
-}
-
 const styles = styles = require('./styles');
