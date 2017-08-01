@@ -127,7 +127,11 @@ constructor(props)
 
           </View>
           <ScrollView>
+<<<<<<< HEAD
           <TouchableHighlight style={styles.button} ><Text>ก</Text></TouchableHighlight>
+=======
+          <TouchableHighlight style={styles.button}><Text>ก</Text></TouchableHighlight>
+>>>>>>> 6733b7b65c3d1d1a5bb69f71a9b38348a85e7d20
           
           
            {this.lapsList(this.state.array)}
@@ -149,11 +153,8 @@ constructor(props)
       return (
         <View>
 
-          <TouchableHighlight   onPress={() => this.props.goToDescription('ThreeTH',data) } 
-        style={styles.button}><Text>{data.name}                 <Image            
-                style={{width: 30, height: 30}}
-                source={{uri: data.Obj_icon}} 
-                /></Text></TouchableHighlight>
+          <TouchableHighlight onPress={() => this.props.goToDescription('ThreeTH',data) } 
+        style={styles.button}><Text>{data.name}</Text></TouchableHighlight>
           </View>
       )
     })

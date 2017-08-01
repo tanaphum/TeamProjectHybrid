@@ -24,6 +24,7 @@ constructor(props)
       NameRubbish : 'apple' ,
       IconRubbish: 'https://png.icons8.com/apple/color/24',
       StepOfDisposing : 'Step Of Disposing',
+<<<<<<< HEAD
       array:[
         {
         id : 1,
@@ -35,6 +36,8 @@ constructor(props)
         },
       ],
 
+=======
+>>>>>>> 6733b7b65c3d1d1a5bb69f71a9b38348a85e7d20
       dataSource:0,
       
               Bsection:[
@@ -165,7 +168,7 @@ constructor(props)
       return (
         <View>
 
-          <TouchableHighlight   onPress={() => this.props.goToDescription('Three',data) } 
+          <TouchableHighlight onPress={() => this.props.goToDescription('Three',data)}
         style={styles.button}><Text>{data.name}                 <Image            
                 style={{width: 30, height: 30}}
                 source={{uri: data.Obj_icon}} 
