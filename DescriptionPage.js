@@ -78,6 +78,7 @@ export default class DescriptionPage extends Component {
                 style={{width: 30, height: 30}}
                 source={{uri: this.state.IconRubbish}} 
                 />
+                {this.props.currentObj.name}
             </View>
         </TouchableHighlight>
         {/*Show Type of bin  image and StepOfDisposing */}

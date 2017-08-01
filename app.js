@@ -25,6 +25,7 @@ export default class Teamproject extends Component {
     {
       componentSelected: 'One',
       nameapp: 'Check Rubbish',
+      currentObj: '',
     }
   }
    //change Page function
@@ -32,7 +33,12 @@ export default class Teamproject extends Component {
     this.setState({componentSelected: component});
   }
 
-  
+  goToDescription = (component,data) =>{
+     this.setState({
+       componentSelected: component,
+       currentObj: data,
+      });
+  }
 
   renderComponent(component) {
         //English start page
