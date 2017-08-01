@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 import { Select, Option } from 'react-native-select-list';
 
-export default class ComponentThree extends Component {
+export default class DescriptionPageTH extends Component {
 
      constructor(props)
   {
@@ -20,15 +20,15 @@ export default class ComponentThree extends Component {
     {
       componentSelected: 'One',
       Language : 'En',
-      Typeofbin: 'Compose',
+      Typeofbin: 'ย่อยสลาย',
       imagebin: 'https://i.ebayimg.com/00/s/MTAyNFg2MTQ=/z/wPEAAOSw5cRZGg3M/$_86.JPG',
-      StepOfDisposing : 'Step Of Disposing',
+      StepOfDisposing : 'ขั้นตอน',
       IconRubbish: 'https://png.icons8.com/apple/color/24',
       dataSource:0,
       
     }
   }
-
+    //GET api from smartbin
     componentDidMount() {
     return fetch('http://smartbin.devfunction.com/api/?team_id=11&secret=Wc49Am')
       .then((response) => response.json())
@@ -42,37 +42,38 @@ export default class ComponentThree extends Component {
       .catch((error) => {
         console.error(error);
       });
-  }
+    }
     
     render() {
     return (
         <View style={{backgroundColor: '#ccc', flex:1}}>
            <View style = {styles.ViewRow}>
               <View style = {styles.BackBox} >
-                <Text style={{fontSize : 30}} onPress={() => this.props.changeComponent('Two') }>🔙</Text>
+                <Text style={{fontSize : 30}} onPress={() => this.props.changeComponent('TwoTH') }>🔙</Text>
               </View>
               <View style = {styles.GeneralBinBox}>
-                <Text>General</Text>
+                <Text>ทั่วไป</Text>
                 <Text>{this.state.dataSource.general}</Text>
               </View>
               <View style = {styles.RecycleBinBox}>
-                <Text>Recycle</Text>
+                <Text>รีไซเคิล</Text>
                 <Text>{this.state.dataSource.recycle}</Text>
               </View>
               <View style = {styles.ComposeBinBox}>
-                <Text  style={styles.textBinCompose}>Compose</Text>
+                <Text  style={styles.textBinCompose}>ย่อยสลาย</Text>
                 <Text>{this.state.dataSource.compostable}</Text>
               </View>
               <View style = {styles.HazardBinBox}>
-                <Text >Hazard</Text>
+                <Text >อันตราย</Text>
                 <Text>{this.state.dataSource.hazardous}</Text>
               </View>
-                   <TouchableHighlight onPress={() => this.props.changeComponent('ThreeTH') } 
-            style={styles.LanguageChangeBox}><Text style={styles.textLanguageChange}>TH</Text></TouchableHighlight>
-           </View>
+                   <TouchableHighlight onPress={() => this.props.changeComponent('Three') } 
+            style={styles.LanguageChangeBox}><Text style={styles.textLanguageChange}>EN</Text></TouchableHighlight>
+
+          </View>
         <TouchableHighlight style={styles.button}>
             <View style={styles.ViewRow}>
-                <Text style={{marginRight : 100}}>Apple 
+                <Text style={{marginRight : 100}}>แอปเปิ้ล 
                 </Text>
                 <Image            
                 style={{width: 30, height: 30}}

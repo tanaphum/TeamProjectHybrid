@@ -73,7 +73,7 @@ constructor(props)
       
     }
   }
-
+    //GET api from smartbin
     componentDidMount() {
     return fetch('http://smartbin.devfunction.com/api/?team_id=11&secret=Wc49Am')
       .then((response) => response.json())
@@ -142,6 +142,7 @@ constructor(props)
     })
 
 }
+//POST api from smartbin
 updateStat = () => {
   fetch('http://smartbin.devfunction.com/api/', {
   method: 'post',

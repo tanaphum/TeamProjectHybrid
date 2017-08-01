@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 import { Select, Option } from 'react-native-select-list';
 
-export default class ComponentOneTH extends Component {
+export default class StartPage extends Component {
    constructor(props)
   {
     super(props);
@@ -19,10 +19,10 @@ export default class ComponentOneTH extends Component {
     render() {
     return (
         <View style={{backgroundColor: '#ccc', flex:1,justifyContent: 'center',alignItems: 'center'}}>
-          <Text style={{fontSize : 40, marginBottom:100}}>เช็คขยะ</Text>
+          <Text style={{fontSize : 40, marginBottom:100}}>Check Rubbish</Text>
         <Button
-           onPress={() => this.props.changeComponent('TwoTH')}
-           title="เริ่ม"
+           onPress={() => this.props.changeComponent('Two')}
+           title="Start"
            color="#841584"
         />
       </View>
