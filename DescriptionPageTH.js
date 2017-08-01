@@ -44,6 +44,7 @@ export default class DescriptionPageTH extends Component {
       });
     }
     
+    
     render() {
     return (
         <View style={{backgroundColor: '#ccc', flex:1}}>

@@ -106,6 +106,7 @@ constructor(props)
           <TouchableHighlight style={styles.SectionItem}><Text style={{fontSize:25 ,color:'#99ffff'}}>ก</Text></TouchableHighlight>
           
           
+          
            {this.lapsList(this.state.array)}
 
           </ScrollView>

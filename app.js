@@ -116,6 +116,7 @@ updateStat = (category) => {
       } 
 
        
+       
         //Thai list page
         else if(component == 'TwoTH'){
         return <ListPageTH changeComponent={this.changeComponent} goToDescription={this.goToDescription}/>
