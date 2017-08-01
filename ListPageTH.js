@@ -117,7 +117,7 @@ constructor(props)
       return (
         <View>
 
-          <TouchableHighlight  
+          <TouchableHighlight onPress={() => this.props.goToDescription('ThreeTH',data) } 
         style={styles.button}><Text>{data.name}</Text></TouchableHighlight>
           </View>
       )

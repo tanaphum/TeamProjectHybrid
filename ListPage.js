@@ -169,7 +169,7 @@ constructor(props)
       return (
         <View>
 
-          <TouchableHighlight  
+          <TouchableHighlight  onPress={() => this.props.goToDescription('Three',data)}
         style={styles.button}><Text>{data.name}                 <Image            
                 style={{width: 30, height: 30}}
                 source={{uri: data.Obj_icon}} 
