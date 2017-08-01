@@ -34,40 +34,7 @@ constructor(props)
         name : 'testw',
         },
       ],
-       Asection:[
-        {
-        
-        name : 'anchovy',
-        },
-        {
-        
-        name : 'almond',
-        }, 
-        {
-        
-        name : 'alfalfa sprouts',
-        }, 
-        {
-        
-        name : 'acorn squash',
-        },
-        , 
-        {
-        
-        name : 'acorn squash',
-        },
-        , 
-        {
-        
-        name : 'acorn squash',
-        },
-        , 
-        {
-        
-        name : 'acorn squash',
-        },
 
-      ],
       dataSource:0,
       
               Bsection:[
@@ -104,6 +71,33 @@ constructor(props)
   StepOfDisposing : 'Should dehydate the gabage or remove water in gabage  before trash.'
     	},
 	],
+	Csection:[
+    	{
+   	 
+    	name : 'chicken' ,
+	category: 'compostable',
+  Obj_icon: 'https://png.icons8.com/chicken/office/16',
+  img_bin: 'https://s3-ap-southeast-2.amazonaws.com/wc-prod-pim/JPEG_1000x1000/JBRMSH18LB_j_burrows_18l_mesh_bin_black.jpg',
+  StepOfDisposing : 'Should wrapping the hazard garbage with the bag.'
+    	},
+    	 {
+   	 
+    	name : 'can',
+	category: 'recycle',
+  Obj_icon: 'https://png.icons8.com/beer-can/office/16',
+  img_bin: 'http://www.aacounty.org/sebin/j/x/bins.jpeg',
+  StepOfDisposing : 'Should pull off the metal the garbage before trash.'
+      },
+      {
+   	 
+    	name : 'corn',
+	category: 'compostable',
+  Obj_icon: 'https://png.icons8.com/corn/office/16" title="Corn',
+  img_bin: 'https://s3-ap-southeast-2.amazonaws.com/wc-prod-pim/JPEG_1000x1000/JBRMSH18LB_j_burrows_18l_mesh_bin_black.jpg',
+  StepOfDisposing : 'Should dehydate the gabage or returnmove water in gabage  before trash.'
+    	},
+	],
+
 
       currentObj : 0,
     }
@@ -153,10 +147,12 @@ constructor(props)
 
           </View>
           <ScrollView>
-          <TouchableHighlight onPress={() => this.updateStat()} style={styles.button}><Text>B</Text></TouchableHighlight>
+          <TouchableHighlight style={styles.button}><Text>B</Text></TouchableHighlight>
           
    
           {this.lapsList(this.state.Bsection)}
+          <TouchableHighlight  style={styles.button}><Text>C</Text></TouchableHighlight>
+          {this.lapsList(this.state.Csection)}
 
           </ScrollView>
       </View>
