@@ -20,6 +20,17 @@ import DescriptionPageTH from './DescriptionPageTH.js'; //import Thai descriptio
 
 import GeneralBinComponent from './GeneralBinComponent.js';//import General bin description page
 import GeneralBinComponentTH from './GeneralBinComponentTH.js';//import General bin description page
+
+import CompostableComponent from './CompostableComponent.js';
+import CompostableComponentTH from './CompostableComponentTH.js';
+
+import HazardComponent from './HazardComponent.js';
+import HazardComponentTH from './HazardComponentTH.js';
+
+import RecycleComponent from '/RecycleComponent.js';
+import RecycleComponentTH from '/RecycleComponentTH.js';
+
+
 export default class Teamproject extends Component {
  constructor(props)
   {
@@ -136,6 +147,31 @@ updateStat = (category) => {
         else if(component == 'GeneralComponentTH'){
         return <GeneralBinComponentTH changeComponent={this.changeComponent} currentObj={this.state.currentObj}/>
       }
+       //Compostable bin description page
+        else if(component == 'CompostableComponent'){
+        return <CompostableComponent changeComponent={this.changeComponent} />
+      }
+      //Compostable bin description page
+        else if(component == 'CompostableComponentTH'){
+        return <CompostableComponentTH changeComponent={this.changeComponent} currentObj={this.state.currentObj}/>
+      }
+       //Recycle bin description page
+        else if(component == 'RecycleComponent'){
+        return <RecycleComponent changeComponent={this.changeComponent} />
+      }
+      //Recycle bin description page
+        else if(component == 'RecycleComponentTH'){
+        return <RecycleComponent changeComponent={this.changeComponent} currentObj={this.state.currentObj}/>
+      }
+      //hazard bin description page
+        else if(component == 'HazardComponent'){
+        return <RecycleComponent changeComponent={this.changeComponent} />
+      }
+      //hazard bin description page
+        else if(component == 'HazardComponentTH'){
+        return <HazardComponentTH changeComponent={this.changeComponent} currentObj={this.state.currentObj}/>
+      }
+
 
 
   }
