@@ -25,47 +25,30 @@ constructor(props)
       IconRubbish: 'https://png.icons8.com/apple/color/24',
       StepOfDisposing : 'Step Of Disposing',
       array:[
-        {
-        id : 1,
-        name : 'ทดลอง',
-        },
-        {
-        id : 2,
-        name : 'ทดลอง2',
-        },
-      ],
-       Asection:[
-        {
-        
-        name : 'ไก่',
-        },
-        {
-        
-        name : 'กา',
-        }, 
-        {
-        
-        name : 'ไก่กา',
-        }, 
-        {
-        
-        name : 'เกม',
-        },
-        , 
-        {
-        
-        name : 'กระดาษ',
-        },
-        , 
-        {
-        
-        name : 'กระจก',
-        },
-        , 
-        {
-        
-        name : 'กระดิ่ง',
-        },
+            	{
+   	 
+                    name : 'ไก่' ,
+                category: 'hazard',
+                Obj_icon: 'https://png.icons8.com/chicken/office/16',
+                img_bin: 'http://www.falkirk.gov.uk/services/bins-rubbish-recycling/household-waste/what-goes-in-my-bins/images/green-bin.jpg',
+                StepOfDisposing : 'ไก่ ไก่ ไก่'
+                    },
+                    {
+                  
+                    name : 'กระดาษ',
+                category: 'general',
+                Obj_icon: 'https://png.icons8.com/paper/color/24',
+                img_bin: 'http://www.bin-shop.co.uk/image/cache/data/soho-commercial/untouchable-containers/untouchable-large-square-bin-blue-500x500.jpg',
+                StepOfDisposing : 'Should pull off the metal the garbage before trash.'
+                    },
+                    {
+                  
+                    name : 'แก้ว',
+                category: 'compostable',
+                Obj_icon: 'https://png.icons8.com/glass/color/24',
+                img_bin: 'https://s3-ap-southeast-2.amazonaws.com/wc-prod-pim/JPEG_1000x1000/JBRMSH18LB_j_burrows_18l_mesh_bin_black.jpg',
+                StepOfDisposing : 'Should dehydate the gabage or remove water in gabage  before trash.'
+                    },
 
       ],
       
@@ -122,7 +105,6 @@ constructor(props)
           
           
            {this.lapsList(this.state.array)}
-          {this.lapsList(this.state.Asection)}
 
           </ScrollView>
       </View>
@@ -135,7 +117,7 @@ constructor(props)
       return (
         <View>
 
-          <TouchableHighlight onPress={() => this.props.changeComponent('ThreeTH') } 
+          <TouchableHighlight onPress={() => this.props.goToDescription('ThreeTH',data) } 
         style={styles.button}><Text>{data.name}</Text></TouchableHighlight>
           </View>
       )

@@ -67,27 +67,30 @@ export default class DescriptionPageTH extends Component {
                 <Text >อันตราย</Text>
                 <Text>{this.state.dataSource.hazardous}</Text>
               </View>
-                   <TouchableHighlight onPress={() => this.props.changeComponent('Three') } 
+                   <TouchableHighlight onPress={() => this.props.changeComponent('Two') } 
             style={styles.LanguageChangeBox}><Text style={styles.textLanguageChange}>EN</Text></TouchableHighlight>
 
           </View>
         <TouchableHighlight style={styles.button}>
             <View style={styles.ViewRow}>
-                <Text style={{marginRight : 100}}>แอปเปิ้ล 
+                <Text style={{marginRight : 100}}>
+                  {this.props.currentObj.name}
                 </Text>
                 <Image            
                 style={{width: 30, height: 30}}
-                source={{uri: this.state.IconRubbish}} 
+                source={{uri: this.props.currentObj.Obj_icon}} 
                 />
+                
             </View>
         </TouchableHighlight>
         {/*Show Type of bin  image and StepOfDisposing */}
-        <View style={{backgroundColor: '#444444', flex:1,alignItems: 'center'}}>
+        <View style={{backgroundColor: '#444444', flex:1,alignItems: 'center',paddingTop : 20}}>
           <Image           
-          style={{width: 100, height: 100}}
-          source={{uri: this.state.imagebin}} 
+          style={{width: 100, height: 100,marginBottom : 30}}
+          source={{uri: this.props.currentObj.img_bin}} 
           />
-          <Text>{this.state.imagebin}</Text>
+          <Text>ขั้้นตอนการ</Text>
+          <Text>{this.props.currentObj.StepOfDisposing}</Text>
         </View>
       </View>
     )

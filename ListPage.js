@@ -70,6 +70,7 @@ constructor(props)
       ],
       dataSource:0,
       Bsection:[
+<<<<<<< HEAD
     	{
    	 
     	name : 'bandage' ,
@@ -103,6 +104,41 @@ constructor(props)
   StepOfDisposing : 'Should dehydate the gabage or remove water in gabage  before trash.'
     	},
 	],
+=======
+              {
+            
+              name : 'bandage' ,
+          category: 'hazard',
+          Obj_icon: 'https://png.icons8.com/bandage/office/16',
+          img_bin: 'http://www.falkirk.gov.uk/services/bins-rubbish-recycling/household-waste/what-goes-in-my-bins/images/green-bin.jpg',
+          StepOfDisposing : 'Should wrapping the hazard garbage with the bag.'
+              },
+              {
+            
+              name : 'Basketball',
+          category: 'general',
+          Obj_icon: 'https://png.icons8.com/basketball/color/24',
+          img_bin: 'http://www.bin-shop.co.uk/image/cache/data/soho-commercial/untouchable-containers/untouchable-large-square-bin-blue-500x500.jpg',
+          StepOfDisposing : 'Should pull off the metal the garbage before trash.'
+              },
+              {
+            
+              name : 'bean',
+          category: 'compostable',
+          Obj_icon: 'https://png.icons8.com/java-bean/color/24',
+          img_bin: 'https://s3-ap-southeast-2.amazonaws.com/wc-prod-pim/JPEG_1000x1000/JBRMSH18LB_j_burrows_18l_mesh_bin_black.jpg',
+          StepOfDisposing : 'Should dehydate the gabage or remove water in gabage  before trash.'
+              },
+            {
+                
+                  name : 'bread',
+              category: 'compost',
+              Obj_icon: 'https://png.icons8.com/bread/office/16',
+              img_bin: 'https://s3-ap-southeast-2.amazonaws.com/wc-prod-pim/JPEG_1000x1000/JBRMSH18LB_j_burrows_18l_mesh_bin_black.jpg',
+              StepOfDisposing : 'Should dehydate the gabage or remove water in gabage  before trash.'
+                  },
+              ],
+>>>>>>> f1f4fa93a38f114b81d662904db294e05a4ef79f
 
       currentObj : 0,
     }

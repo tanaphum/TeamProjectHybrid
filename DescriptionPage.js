@@ -67,28 +67,41 @@ export default class DescriptionPage extends Component {
                 <Text >Hazard</Text>
                 <Text>{this.state.dataSource.hazardous}</Text>
               </View>
-                   <TouchableHighlight onPress={() => this.props.changeComponent('ThreeTH') } 
+                   <TouchableHighlight onPress={() => this.props.changeComponent('TwoTH') } 
             style={styles.LanguageChangeBox}><Text style={styles.textLanguageChange}>TH</Text></TouchableHighlight>
            </View>
         <TouchableHighlight style={styles.button}>
             <View style={styles.ViewRow}>
+<<<<<<< HEAD
                 <Text style={{marginRight : 100}}>{this.props.currentObj.name} 
+=======
+                <Text style={{marginRight : 100}}>
+                  {this.props.currentObj.name}
+>>>>>>> f1f4fa93a38f114b81d662904db294e05a4ef79f
                 </Text>
                 <Image            
                 style={{width: 30, height: 30}}
                 source={{uri: this.props.currentObj.Obj_icon}} 
                 />
                 
+<<<<<<< HEAD
                
+=======
+>>>>>>> f1f4fa93a38f114b81d662904db294e05a4ef79f
             </View>
         </TouchableHighlight>
         {/*Show Type of bin  image and StepOfDisposing */}
-        <View style={{backgroundColor: '#444444', flex:1,alignItems: 'center'}}>
+        <View style={{backgroundColor: '#444444', flex:1,alignItems: 'center',paddingTop : 20}}>
           <Image           
-          style={{width: 100, height: 100}}
-          source={{uri: this.state.imagebin}} 
+          style={{width: 100, height: 100,marginBottom : 30}}
+          source={{uri: this.props.currentObj.img_bin}} 
           />
+<<<<<<< HEAD
           
+=======
+          <Text>Step Of Disposing</Text>
+          <Text>{this.props.currentObj.StepOfDisposing}</Text>
+>>>>>>> f1f4fa93a38f114b81d662904db294e05a4ef79f
         </View>
         <View></View>
       </View>
