@@ -72,13 +72,14 @@ export default class DescriptionPage extends Component {
            </View>
         <TouchableHighlight style={styles.button}>
             <View style={styles.ViewRow}>
-                <Text style={{marginRight : 100}}>Apple 
+                <Text style={{marginRight : 100}}>{this.props.currentObj.name} 
                 </Text>
                 <Image            
                 style={{width: 30, height: 30}}
-                source={{uri: this.state.IconRubbish}} 
+                source={{uri: this.props.currentObj.Obj_icon}} 
                 />
-                {this.props.currentObj.name}
+                
+               
             </View>
         </TouchableHighlight>
         {/*Show Type of bin  image and StepOfDisposing */}
@@ -87,8 +88,9 @@ export default class DescriptionPage extends Component {
           style={{width: 100, height: 100}}
           source={{uri: this.state.imagebin}} 
           />
-          <Text>{this.state.imagebin}</Text>
+          
         </View>
+        <View></View>
       </View>
     )
   }

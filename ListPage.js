@@ -97,7 +97,7 @@ constructor(props)
 {
    	 
     	name : 'bread',
-	category: 'compost',
+	category: 'compostable',
   Obj_icon: 'https://png.icons8.com/bread/office/16',
   img_bin: 'https://s3-ap-southeast-2.amazonaws.com/wc-prod-pim/JPEG_1000x1000/JBRMSH18LB_j_burrows_18l_mesh_bin_black.jpg',
   StepOfDisposing : 'Should dehydate the gabage or remove water in gabage  before trash.'
@@ -152,7 +152,7 @@ constructor(props)
 
           </View>
           <ScrollView>
-          <TouchableHighlight onPress={() => this.updateStat()} style={styles.button}><Text>B</Text></TouchableHighlight>
+          <TouchableHighlight  style={styles.button}><Text>B</Text></TouchableHighlight>
           
    
           {this.lapsList(this.state.Bsection)}
@@ -178,23 +178,7 @@ constructor(props)
     })
 
 }
-//POST api from smartbin
-updateStat = () => {
-  fetch('http://smartbin.devfunction.com/api/', {
-  method: 'post',
-  body: JSON.stringify({
-    team_id: 11,
-    secret: 'Wc49Am',
 
-    bin_statistics: {
-      general: 1,
-      compostable: 1,
-      recycle: 1,
-      hazardous: 1
-    }
-  })
-});
-}
 }
 
 const styles = styles = require('./styles');

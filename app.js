@@ -26,6 +26,10 @@ export default class Teamproject extends Component {
       componentSelected: 'One',
       nameapp: 'Check Rubbish',
       currentObj: '',
+      IncreasaeGeneral: 0,
+      IncreasaeRecycle:0,
+      IncreasaeCompostable:0,
+      IncreasaeHazard:0,
     }
   }
    //change Page function
@@ -34,11 +38,64 @@ export default class Teamproject extends Component {
   }
 
   goToDescription = (component,data) =>{
+     
+    this.updateStat(data.category),
      this.setState({
        componentSelected: component,
        currentObj: data,
       });
+     
   }
+
+ 
+
+  //POST api from smartbin
+updateStat = (category) => {
+  if(category == 'general') {
+    this.setState({
+      IncreasaeGeneral: 1,
+      IncreasaeCompostable: 0,
+      IncreasaeRecycle: 0,
+      IncreasaeHazard: 0
+    })
+  }else if(category == 'compostable') {
+     this.setState({
+      IncreasaeGeneral: 0,
+      IncreasaeCompostable: 1,
+      IncreasaeRecycle: 0,
+      IncreasaeHazard: 0
+    })
+  }else if(category == 'recycle') {
+     this.setState({
+      IncreasaeGeneral: 0,
+      IncreasaeCompostable: 0,
+      IncreasaeRecycle: 1,
+      IncreasaeHazard: 0
+    })
+  }else if(category == 'hazard') {
+     this.setState({
+      IncreasaeGeneral: 0,
+      IncreasaeCompostable: 0,
+      IncreasaeRecycle: 0,
+      IncreasaeHazard: 1
+    })
+  }
+  fetch('http://smartbin.devfunction.com/api/', {
+  method: 'post',
+  body: JSON.stringify({
+    team_id: 11,
+    secret: 'Wc49Am',
+
+    bin_statistics: {
+      general: this.state.IncreasaeGeneral,
+      compostable: this.state.IncreasaeCompostable,
+      recycle: this.state.IncreasaeRecycle,
+      hazardous: this.state.IncreasaeHazard,
+    }
+  })
+});
+
+}
 
   renderComponent(component) {
         //English start page
@@ -47,11 +104,11 @@ export default class Teamproject extends Component {
       } 
         //English list page
         else if(component == 'Two') {
-        return <ListPage nameapp={this.state.nameapp} changeComponent={this.changeComponent} />
+        return <ListPage nameapp={this.state.nameapp} goToDescription={this.goToDescription} changeComponent={this.changeComponent} />
       } 
         //English description page
         else if(component == 'Three') {
-        return <DescriptionPage changeComponent={this.changeComponent} />
+        return <DescriptionPage currentObj={this.state.currentObj} changeComponent={this.changeComponent} />
       } 
 
         //Thai start page
