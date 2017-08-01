@@ -24,50 +24,6 @@ constructor(props)
       NameRubbish : 'apple' ,
       IconRubbish: 'https://png.icons8.com/apple/color/24',
       StepOfDisposing : 'Step Of Disposing',
-      array:[
-        {
-        id : 1,
-        name : 'test1',
-        },
-        {
-        id : 2,
-        name : 'testw',
-        },
-      ],
-       Asection:[
-        {
-        
-        name : 'anchovy',
-        },
-        {
-        
-        name : 'almond',
-        }, 
-        {
-        
-        name : 'alfalfa sprouts',
-        }, 
-        {
-        
-        name : 'acorn squash',
-        },
-        , 
-        {
-        
-        name : 'acorn squash',
-        },
-        , 
-        {
-        
-        name : 'acorn squash',
-        },
-        , 
-        {
-        
-        name : 'acorn squash',
-        },
-
-      ],
       dataSource:0,
       
               Bsection:[
