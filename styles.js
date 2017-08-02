@@ -21,22 +21,22 @@ module.exports =StyleSheet.create({
   GeneralBinBox : {
     alignItems: 'center',
     flex:1,
-    backgroundColor: '#2B60DE',
+    backgroundColor: '#4d4dff',
   },
   ComposeBinBox : {
     alignItems: 'center',
     flex:1,
-    backgroundColor: 'green',
+    backgroundColor: '#33cc33',
   },
     RecycleBinBox : {
     alignItems: 'center',
     flex:1,
-    backgroundColor: 'yellow',
+    backgroundColor: '#ffff4d',
   },
   HazardBinBox : {
     alignItems: 'center',
     flex:1,
-    backgroundColor: 'red'
+    backgroundColor: '#ff1a1a'
   },
   BackBox:{
     alignItems: 'center',
@@ -65,7 +65,17 @@ module.exports =StyleSheet.create({
   BinItembox :{
     backgroundColor: '#ededed',
     padding: 10
+  },
+  appTitle : {
+      alignItems: 'center', 
+      backgroundColor: '#eee',
+  },
+  TextStepOfDisposing :{
+    color : '#eee',
+  },
+  TextBinDescription :{
+    color : '#eee',
+    fontSize : 30,
+    marginBottom : 20
   }
-
-
 });

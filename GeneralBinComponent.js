@@ -46,7 +46,7 @@ export default class GeneralBinComponent extends Component {
     render() {
     return (
         <View style={{backgroundColor: '#ccc', flex:1}}>
-        <View style={{alignItems: 'center', backgroundColor: '#ffccee'}}>
+        <View style={styles.appTitle}>
           <Text style={{fontSize: 30}}>Check Rubbish</Text>
           </View>
            <View style = {styles.ViewRow}>
@@ -80,8 +80,8 @@ export default class GeneralBinComponent extends Component {
        
         
           <View>
-          <TouchableHighlight style={styles.SectionItem}><Text style={{fontSize:25 ,color:'#99ffff'}}>General <Image            
-                style={{width: 40, height: 40}}
+          <TouchableHighlight style={styles.SectionItem}><Text style={{fontSize:25 ,color:'blue'}}>General <Image            
+                style={{width: 50, height: 50}}
                 source={{uri: 'https://thumbs.dreamstime.com/x/sign-bin-general-waste-26140645.jpg'}} 
                 /></Text></TouchableHighlight>
           </View>

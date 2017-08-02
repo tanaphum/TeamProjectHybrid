@@ -46,7 +46,7 @@ export default class HazardComponent extends Component {
     render() {
     return (
         <View style={{backgroundColor: '#ccc', flex:1}}>
-        <View style={{alignItems: 'center', backgroundColor: '#ffccee'}}>
+        <View style={styles.appTitle}>
           <Text style={{fontSize: 30}}>Check Rubbish</Text>
           </View>
            <View style = {styles.ViewRow}>
@@ -81,8 +81,8 @@ export default class HazardComponent extends Component {
        
         
           <View>
-          <TouchableHighlight style={styles.SectionItem}><Text style={{fontSize:25 ,color:'#99ffff'}}>Hazardous <Image            
-                style={{width: 40, height: 40}}
+          <TouchableHighlight style={styles.SectionItem}><Text style={{fontSize:25 ,color:'blue'}}>Hazardous <Image            
+                style={{width: 50, height: 50}}
                 source={{uri: 'http://ehs.oregonstate.edu/sites/ehs.oregonstate.edu/files/webpics/chemical.png'}} 
                 /></Text></TouchableHighlight>
           </View>

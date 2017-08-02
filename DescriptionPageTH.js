@@ -48,7 +48,7 @@ export default class DescriptionPageTH extends Component {
     render() {
     return (
         <View style={{backgroundColor: '#ccc', flex:1}}>
-        <View style={{alignItems: 'center', backgroundColor: '#ffccee'}}>
+        <View style={styles.appTitle}>
           <Text style={{fontSize: 30}}>Check Rubbish</Text>
           </View>
            <View style = {styles.ViewRow}>
@@ -88,7 +88,7 @@ export default class DescriptionPageTH extends Component {
                   {this.props.currentObj.name}
                 </Text>
                 <Image            
-                style={{width: 30, height: 30}}
+                style={{width: 50, height: 50}}
                 source={{uri: this.props.currentObj.Obj_icon}} 
                 />
                 
@@ -96,12 +96,13 @@ export default class DescriptionPageTH extends Component {
         </TouchableHighlight>
         {/*Show Type of bin  image and StepOfDisposing */}
         <View style={{backgroundColor: '#444444', flex:1,alignItems: 'center',paddingTop : 20}}>
+          <Text style={styles.TextBinDescription}>{this.props.currentObj.category} bin</Text>
           <Image           
           style={{width: 100, height: 100,marginBottom : 30}}
           source={{uri: this.props.currentObj.img_bin}} 
           />
-          <Text>ขั้้นตอนการ</Text>
-          <Text>{this.props.currentObj.StepOfDisposing}</Text>
+          <Text style={styles.TextStepOfDisposing}>ขั้้นตอนการ</Text>
+          <Text style={styles.TextStepOfDisposing}>{this.props.currentObj.StepOfDisposing}</Text>
         </View>
       </View>
     )

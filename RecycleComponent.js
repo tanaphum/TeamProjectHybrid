@@ -46,7 +46,7 @@ export default class RecycleComponent extends Component {
     render() {
     return (
         <View style={{backgroundColor: '#ccc', flex:1}}>
-        <View style={{alignItems: 'center', backgroundColor: '#ffccee'}}>
+        <View style={styles.appTitle}>
           <Text style={{fontSize: 30}}>Check Rubbish</Text>
           </View>
            <View style = {styles.ViewRow}>
@@ -81,8 +81,8 @@ export default class RecycleComponent extends Component {
        
         
           <View>
-          <TouchableHighlight style={styles.SectionItem}><Text style={{fontSize:25 ,color:'#99ffff'}}>Recycle <Image            
-                style={{width: 40, height: 40}}
+          <TouchableHighlight style={styles.SectionItem}><Text style={{fontSize:25 ,color:'blue'}}>Recycle <Image            
+                style={{width: 50, height: 50}}
                 source={{uri: 'https://image.shutterstock.com/z/stock-vector-yellow-recycle-symbol-in-black-circle-40226371.jpg'}} 
                 /></Text></TouchableHighlight>
           </View>

@@ -46,7 +46,7 @@ export default class CompostableComponentTH extends Component {
     render() {
     return (
         <View style={{backgroundColor: '#ccc', flex:1}}>
-        <View style={{alignItems: 'center', backgroundColor: '#ffccee'}}>
+        <View style={styles.appTitle}>
           <Text style={{fontSize: 30}}>Check Rubbish</Text>
           </View>
            <View style = {styles.ViewRow}>
@@ -82,8 +82,8 @@ export default class CompostableComponentTH extends Component {
       
        
        <View>
-          <TouchableHighlight style={styles.SectionItem}><Text style={{fontSize:25 ,color:'#99ffff'}}>ย่อยสลายได้  <Image            
-                style={{width: 40, height: 40}}
+          <TouchableHighlight style={styles.SectionItem}><Text style={{fontSize:25 ,color:'blue'}}>ย่อยสลายได้  <Image            
+                style={{width: 50, height: 50}}
                 source={{uri: 'http://www.cherwell.gov.uk/media/image/l/f/00004A96B7AC.C0A801BA.0000211F.0002.jpg'}} 
                 /></Text></TouchableHighlight>
           </View>
